@@ -1,0 +1,41 @@
+{
+  "name": "mediahubmx-wer-streamt-es",
+  "version": "0.0.0",
+  "main": "dist",
+  "scripts": {
+    "test": "jest test/",
+    "develop": "ts-node-dev --transpile-only --no-notify src",
+    "build": "tsc",
+    "start": "node ."
+  },
+  "dependencies": {
+    "@mediahubmx/sdk": "^1.0.3",
+    "cheerio": "^1.0.0-rc.10",
+    "node-fetch": "^2.6.1",
+    "puppeteer-core": "^10.0.0",
+    "puppeteer-extra": "^3.1.18",
+    "puppeteer-extra-plugin-block-resources": "^2.2.9",
+    "puppeteer-extra-plugin-stealth": "^2.7.8",
+    "rxjs": "^6.6.3"
+  },
+  "devDependencies": {
+    "@types/cheerio": "^0.22.29",
+    "@types/node": "^14.14.28",
+    "@types/node-fetch": "^2.5.10",
+    "jest": "^26.6.3",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.3.1",
+    "simple-git-hooks": "^2.8.0",
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^4.3.2"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
